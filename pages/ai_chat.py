@@ -1,6 +1,6 @@
 import streamlit as st
 
-from utils.chatbot import answer_question
+from utils.gemini_chat import ask_gemini
 
 
 def show():
@@ -19,9 +19,11 @@ def show():
 
     if st.button("Ask AI"):
 
-        answer = answer_question(df, question)
+     with st.spinner("🤖 Gemini is thinking..."):
 
-        if hasattr(answer, "shape"):
-            st.dataframe(answer)
-        else:
+        try:
+            answer = ask_gemini(question, df)
             st.success(answer)
+
+        except Exception as e:
+            st.error(f"Error: {e}")
