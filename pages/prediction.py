@@ -27,8 +27,12 @@ def show():
 
     if st.button("Train Model"):
 
-        model, score = train_model(numeric, target)
+        model, r2, mae, rmse = train_model(numeric, target)
 
         st.success("✅ Model Trained Successfully!")
 
-        st.metric("R² Score", round(score, 3))
+        col1, col2, col3 = st.columns(3)
+
+        col1.metric("R² Score", round(r2, 3))
+        col2.metric("MAE", round(mae, 3))
+        col3.metric("RMSE", round(rmse, 3))

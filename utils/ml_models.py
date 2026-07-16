@@ -1,6 +1,10 @@
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import r2_score
+from sklearn.metrics import (
+    r2_score,
+    mean_absolute_error,
+    mean_squared_error
+)
 
 
 def train_model(df, target):
@@ -8,6 +12,7 @@ def train_model(df, target):
     X = df.drop(columns=[target])
     y = df[target]
 
+    # Keep only numeric features
     X = X.select_dtypes(include="number")
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -23,6 +28,9 @@ def train_model(df, target):
 
     prediction = model.predict(X_test)
 
-    score = r2_score(y_test, prediction)
+    # Evaluation Metrics
+    r2 = r2_score(y_test, prediction)
+    mae = mean_absolute_error(y_test, prediction)
+    rmse = mean_squared_error(y_test, prediction) ** 0.5
 
-    return model, score
+    return model, r2, mae, rmse
