@@ -10,7 +10,7 @@ from pages import (
     prediction,
     reports
 )
-from utils import profiler
+
 # ----------------------------
 # Page Configuration
 # ----------------------------
@@ -18,8 +18,57 @@ from utils import profiler
 st.set_page_config(
     page_title="AI Data Analytics Assistant",
     page_icon="📊",
-    layout="wide"
-)
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)  # Better for mobile
+
+
+# ----------------------------
+# Custom CSS
+# ----------------------------
+
+st.markdown("""
+<style>
+
+.block-container{
+    padding-top:1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+.stButton>button{
+    width:100%;
+    border-radius:10px;
+}
+
+.stDownloadButton>button{
+    width:100%;
+    border-radius:10px;
+}
+
+.stTextInput input{
+    font-size:18px;
+}
+
+.stTextArea textarea{
+    font-size:18px;
+}
+
+@media (max-width:768px){
+
+    .block-container{
+        padding-left:0.5rem;
+        padding-right:0.5rem;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # ----------------------------
 # Session State
@@ -37,7 +86,7 @@ if "original_df" not in st.session_state:
 
 st.sidebar.title("📊 Navigation")
 
-menu = st.sidebar.radio(
+menu = st.sidebar.selectbox(
     "Select Module",
     [
         "🏠 Home",
@@ -61,6 +110,9 @@ if menu == "🏠 Home":
 elif menu == "📁 Upload Dataset":
     upload.show()
 
+elif menu == "📈 Data Profile":
+    profile.show()
+
 elif menu == "🧹 Data Cleaning":
     cleaning.show()
 
@@ -70,18 +122,9 @@ elif menu == "📊 Visualization":
 elif menu == "🤖 AI Chat":
     ai_chat.show()
 
-elif menu == "📈 Data Profile":
-    profile.show()
-
 elif menu == "📉 Prediction":
     prediction.show()
 
 elif menu == "📄 Reports":
     reports.show()
-    
 
-elif menu == "📊 Visualization":
-    visualization.show()    
-
-elif menu == "🤖 AI Chat":
-    ai_chat.show()    
