@@ -1,63 +1,174 @@
 import streamlit as st
 
+
 def show():
 
-    st.title("📊 AI Data Analytics Assistant")
+    # ==============================
+    # HERO SECTION
+    # ==============================
 
-    st.markdown(
-        """
-        Welcome to your AI-powered data analytics platform.
+    st.markdown("""
+    # 📊 AI Data Analytics Assistant
 
-        Upload a dataset and use AI to clean, analyze, visualize,
-        predict, and generate reports in one place.
-        """
-    )
+    ### Transform your raw data into meaningful insights with AI.
 
-    st.divider()
+    Upload your dataset and instantly **clean, analyze, visualize, predict,
+    chat with your data, and generate reports** — all from one platform.
+    """)
 
-    st.subheader("🚀 Features")
+    st.markdown("---")
+
+    # ==============================
+    # FEATURE CARDS
+    # ==============================
+
+    st.markdown("## 🚀 Features")
 
     col1, col2 = st.columns(2)
 
     with col1:
-        st.info("📁 Upload CSV & Excel Files")
-        st.info("🧹 Automatic Data Cleaning")
-        st.info("📊 Interactive Visualizations")
-        st.info("🤖 AI Chat with Gemini")
+        st.info("""
+        ### 📁 Upload Dataset
+        Upload CSV and Excel datasets for instant analysis.
+        """)
+
+        st.info("""
+        ### 🧹 Automatic Data Cleaning
+        Handle missing values, duplicates, and data quality issues.
+        """)
+
+        st.info("""
+        ### 📊 Interactive Visualization
+        Generate charts and explore patterns in your data.
+        """)
+
+        st.info("""
+        ### 🤖 AI Data Chat
+        Ask questions about your dataset using AI.
+        """)
 
     with col2:
-        st.info("📈 Machine Learning Prediction")
-        st.info("📄 AI Report Generation")
-        st.info("📥 Download Trained Models")
-        st.info("📱 Mobile Friendly")
+        st.info("""
+        ### 📈 Machine Learning Prediction
+        Train Linear Regression, Decision Tree, Random Forest,
+        and XGBoost models.
+        """)
 
-    st.divider()
+        st.info("""
+        ### 📄 AI Report Generation
+        Generate downloadable data analysis reports.
+        """)
 
-    st.subheader("⚡ Quick Start")
+        st.info("""
+        ### 💾 Download ML Models
+        Train and download machine learning models as `.pkl` files.
+        """)
 
-    st.success("""
-1. Upload your dataset.
-2. Explore Data Profile.
-3. Clean missing values.
-4. Create visualizations.
-5. Ask AI questions.
-6. Train ML models.
-7. Download reports and models.
-""")
+        st.info("""
+        ### 📱 Mobile Friendly
+        Access the application from desktop, tablet, or mobile.
+        """)
 
-    st.divider()
+    st.markdown("---")
 
-    st.subheader("📌 Current Status")
+    # ==============================
+    # APP PREVIEW
+    # ==============================
 
-    if st.session_state.df is None:
+    st.markdown("## 🖥️ Application Preview")
 
-        st.warning("No dataset uploaded.")
+tab1, tab2, tab3, tab4 = st.tabs([
+    "📁 Upload",
+    "📊 Visualization",
+    "🤖 AI Chat",
+    "📈 Prediction"
+])
 
-    else:
+with tab1:
+    st.image(
+        "assets/images/upload.png",
+        caption="Dataset Upload and Analysis",
+        use_container_width=True
+    )
 
-        rows, cols = st.session_state.df.shape
+with tab2:
+    st.image(
+        "assets/images/visualization.png",
+        caption="Interactive Data Visualization",
+        use_container_width=True
+    )
 
-        c1, c2 = st.columns(2)
+with tab3:
+    st.image(
+        "assets/images/ai_chat.png",
+        caption="AI-powered Data Chat",
+        use_container_width=True
+    )
 
-        c1.metric("Rows", rows)
-        c2.metric("Columns", cols)
+with tab4:
+    st.image(
+        "assets/images/prediction.png",
+        caption="Machine Learning Prediction",
+        use_container_width=True
+    )
+
+    # ==============================
+    # PROJECT LINKS
+    # ==============================
+
+    st.markdown("## 🔗 Project Links")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.link_button(
+            "⭐ View Project on GitHub",
+            "https://github.com/Pavankadkanje",
+            use_container_width=True
+        )
+
+    with col2:
+        st.link_button(
+            "💼 Connect on LinkedIn",
+            "https://www.linkedin.com/in/pavan-kadkanje-307155327",
+            use_container_width=True
+        )
+
+    st.markdown("---")
+
+    # ==============================
+    # BUILT WITH
+    # ==============================
+
+    st.markdown("## 🛠️ Built With")
+
+    st.markdown("""
+    **Frontend & Application**
+    - Python
+    - Streamlit
+
+    **Data Analytics**
+    - Pandas
+    - NumPy
+    - Matplotlib
+
+    **Machine Learning**
+    - Scikit-learn
+    - XGBoost
+
+    **Artificial Intelligence**
+    - Gemini API
+
+    **Database**
+    - MySQL
+
+    **Deployment & Version Control**
+    - Streamlit Community Cloud
+    - Git & GitHub
+    """)
+
+    st.markdown("---")
+
+    st.caption(
+        "AI Data Analytics Assistant | Built as an end-to-end Data Analytics & AI project"
+    )
