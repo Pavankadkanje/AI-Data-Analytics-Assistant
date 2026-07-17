@@ -8,9 +8,9 @@ from pages import (
     visualization,
     ai_chat,
     prediction,
-    reports
+    reports,
+    login
 )
-
 # ----------------------------
 # Page Configuration
 # ----------------------------
@@ -90,6 +90,7 @@ menu = st.sidebar.radio(
     "Select Module",
     [
         "🏠 Home",
+        "👤 Account",
         "📁 Upload Dataset",
         "📈 Data Profile",
         "🧹 Data Cleaning",
@@ -106,6 +107,9 @@ menu = st.sidebar.radio(
 
 if menu == "🏠 Home":
     home.show()
+
+elif menu == "👤 Account":
+    login.show()
 
 elif menu == "📁 Upload Dataset":
     upload.show()
@@ -127,4 +131,3 @@ elif menu == "📉 Prediction":
 
 elif menu == "📄 Reports":
     reports.show()
-
