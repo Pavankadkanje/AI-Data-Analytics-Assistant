@@ -153,7 +153,9 @@ with tab4:
     - Matplotlib
 
     **Machine Learning**
-    - Scikit-learn
+    - Scikit-learngit add .
+git commit -m "Add portfolio homepage and screenshots"
+git push origin main
     - XGBoost
 
     **Artificial Intelligence**
