@@ -90,14 +90,14 @@ menu = st.sidebar.radio(
     "Select Module",
     [
         "🏠 Home",
-        "👤 Account",
         "📁 Upload Dataset",
         "📈 Data Profile",
         "🧹 Data Cleaning",
         "📊 Visualization",
         "🤖 AI Chat",
         "📉 Prediction",
-        "📄 Reports"
+        "📄 Reports",
+        "👤 Account"
     ]
 )
 
@@ -107,9 +107,6 @@ menu = st.sidebar.radio(
 
 if menu == "🏠 Home":
     home.show()
-
-elif menu == "👤 Account":
-    login.show()
 
 elif menu == "📁 Upload Dataset":
     upload.show()
@@ -131,3 +128,6 @@ elif menu == "📉 Prediction":
 
 elif menu == "📄 Reports":
     reports.show()
+
+elif menu == "👤 Account":
+    login.show()

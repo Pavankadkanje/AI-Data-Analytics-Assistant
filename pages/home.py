@@ -77,40 +77,38 @@ def show():
 
     st.markdown("## 🖥️ Application Preview")
 
-tab1, tab2, tab3, tab4 = st.tabs([
-    "📁 Upload",
-    "📊 Visualization",
-    "🤖 AI Chat",
-    "📈 Prediction"
-])
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "📁 Upload",
+        "📊 Visualization",
+        "🤖 AI Chat",
+        "📈 Prediction"
+    ])
 
-with tab1:
-    st.image(
-        "assets/images/upload.png",
-        caption="Upload Dataset",
-        width="stretch"
-    )
+    with tab1:
+        st.image(
+            "assets/images/upload.png",
+            caption="Upload Dataset"
+        )
 
-with tab2:
-    st.image(
-        "assets/images/visualization.png",
-        caption="Interactive Data Visualization",
-        width="stretch"
-    )
+    with tab2:
+        st.image(
+            "assets/images/visualization.png",
+            caption="Interactive Data Visualization"
+        )
 
-with tab3:
-    st.image(
-        "assets/images/ai_chat.png",
-        caption="AI-powered Data Chat",
-        width="stretch"
-    )
+    with tab3:
+        st.image(
+            "assets/images/ai_chat.png",
+            caption="AI-powered Data Chat"
+        )
 
-with tab4:
-    st.image(
-        "assets/images/prediction.png",
-        caption="Machine Learning Prediction",
-        width="stretch"
-    )
+    with tab4:
+        st.image(
+            "assets/images/prediction.png",
+            caption="Machine Learning Prediction"
+        )
+
+    st.markdown("---")
 
     # ==============================
     # PROJECT LINKS
@@ -153,9 +151,7 @@ with tab4:
     - Matplotlib
 
     **Machine Learning**
-    - Scikit-learngit add .
-git commit -m "Add portfolio homepage and screenshots"
-git push origin main
+    - Scikit-learn
     - XGBoost
 
     **Artificial Intelligence**
