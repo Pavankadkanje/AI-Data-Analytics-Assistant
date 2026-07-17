@@ -87,29 +87,29 @@ tab1, tab2, tab3, tab4 = st.tabs([
 with tab1:
     st.image(
         "assets/images/upload.png",
-        caption="Dataset Upload and Analysis",
-        use_container_width=True
+        caption="Upload Dataset",
+        width="stretch"
     )
 
 with tab2:
     st.image(
         "assets/images/visualization.png",
         caption="Interactive Data Visualization",
-        use_container_width=True
+        width="stretch"
     )
 
 with tab3:
     st.image(
         "assets/images/ai_chat.png",
         caption="AI-powered Data Chat",
-        use_container_width=True
+        width="stretch"
     )
 
 with tab4:
     st.image(
         "assets/images/prediction.png",
         caption="Machine Learning Prediction",
-        use_container_width=True
+        width="stretch"
     )
 
     # ==============================
