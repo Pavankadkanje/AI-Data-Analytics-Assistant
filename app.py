@@ -86,7 +86,7 @@ if "original_df" not in st.session_state:
 
 st.sidebar.title("📊 Navigation")
 
-menu = st.sidebar.selectbox(
+menu = st.sidebar.radio(
     "Select Module",
     [
         "🏠 Home",
