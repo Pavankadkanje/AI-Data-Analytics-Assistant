@@ -15,6 +15,24 @@ def show():
     Upload your dataset and instantly **clean, analyze, visualize, predict,
     chat with your data, and generate reports** — all from one platform.
     """)
+    # ==============================
+    # CREATOR CREDIT
+    # ==============================
+
+    st.markdown(
+        """
+        <div style="
+            text-align: right;
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 15px;
+            opacity: 0.8;
+        ">
+            Designed & Developed by <b>Pavan Kadkanje</b> 🚀
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     st.markdown("---")
 
